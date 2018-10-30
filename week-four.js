@@ -1,38 +1,44 @@
-var Person = 
-[
+var person = [
     {name: "Alice", age: 30, gender: "Female", children: true},
-    {name: "Bob", age: 20, gender: "Male", children: false},
-    {name: "Chris", age: 20, gender: "Male", children: true}
+    {name: "Bob", age: 10, gender: "Male", children: false},
+    {name: "Chris", age: 20, gender: "Male", children: true},
     // Initialize array
 ];
 
-// Add entries with Person.push()?
+//Add entries with person.push()
+
+person.push({name: "Denise", age: 20, gender: "Female", children: false});
+
+
+// Function - Sort youngest to oldest
+
+var ageSort = person.sort(function(a, b){
+    return a.age - b.age;
+});
+
+console.log(ageSort);
 
 
 // Function - Print age when given name
 
-var printAge = function(Name)
-{
-    let i;
-    for(i = 0; i <= Person.length-1; i++)
-        if(Name == Person[i].name)
-            return Person[i].age;
+var printAge = function(name){
+    for(let i = 0; i < person.length; i++)
+        if(name == person[i].name)
+            return person[i].age;
 
 };
+
+console.log(printAge("Alice"));
 
 
 // Function - Print name(s) when given age
 
-var printNames = function(Age)
-{
+var printNames = function(age){
     let nameList = [];
-    let i;
-    for(i = 0; i <= Person.length-1; i++)
-        if(Age == Person[i].age)
-            nameList.push(Person[i].name);
+    for(let i = 0; i < person.length; i++)
+        if(age == person[i].age)
+            nameList.push(person[i].name);
             return nameList;
 };
 
-
-console.log(printAge("Alice"));
 console.log(printNames(20));
