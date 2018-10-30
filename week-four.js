@@ -1,5 +1,5 @@
 var person = [
-    {name: "Alice", age: 30, gender: "Female", children: true},
+    {name: "Alice", age: 40, gender: "Female", children: true},
     {name: "Bob", age: 10, gender: "Male", children: false},
     {name: "Chris", age: 20, gender: "Male", children: true},
     // Initialize array
@@ -21,7 +21,7 @@ console.log(ageSort);
 
 // Function - Print age when given name
 
-var printAge = function(name){
+function printAge(name){
     for(let i = 0; i < person.length; i++)
         if(name == person[i].name)
             return person[i].age;
@@ -33,7 +33,7 @@ console.log(printAge("Alice"));
 
 // Function - Print name(s) when given age
 
-var printNames = function(age){
+function printNames(age){
     let nameList = [];
     for(let i = 0; i < person.length; i++)
         if(age == person[i].age)
@@ -42,3 +42,15 @@ var printNames = function(age){
 };
 
 console.log(printNames(20));
+
+
+// Function - General
+
+function genFunc (filter, eval){
+
+    for(let i = 0; i < person.length; i++)
+        if(filter > person[i].age)
+            console.log(person[i].name + " is " + eval);
+};
+
+genFunc(30, "Young");
